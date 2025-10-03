@@ -6,13 +6,12 @@ import Navbar from './components/Navbar.jsx'
 import Sidebar from './components/Sidebar.jsx'
 
 
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar/>
-    <div className='flex flex-row'>
+    <div className='flex flex-row bg-gray-200  w-full'>
       <Sidebar/>
-      <div className='max-w-7xl mx-auto'>
+      <div className='mx-auto max-w-7xl'>
 <App />
       </div>
    
