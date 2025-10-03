@@ -9,9 +9,9 @@ import Sidebar from './components/Sidebar.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar/>
-    <div className='flex flex-row bg-gray-200  w-full'>
+    <div className='flex flex-row  w-full'>
       <Sidebar/>
-      <div className='mx-auto max-w-7xl'>
+      <div className='w-full'>
 <App />
       </div>
    

@@ -6,7 +6,7 @@ const HamburgerMenu = () => (
 
 function Navbar(props) {
     return (
-        <nav className='flex flex-row items-center gap-2 text-2xl'>
+        <nav className='flex flex-row items-center gap-2 text-2xl bg-gray-100'>
           Road safety Ai 
         </nav>
     );
