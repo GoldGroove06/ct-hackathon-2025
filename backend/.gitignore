@@ -9,5 +9,7 @@ pyvenv.cfg
 Scripts
 Lib
 Include
+share
+temp_frames
 uploads
 outputs
