@@ -1,8 +1,9 @@
 # Importing flask module in the project is mandatory
 # An object of Flask class is our WSGI application.
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, Response,  send_from_directory
 import os
 from flask_cors import CORS
+import test
 
 # Flask constructor takes the name of 
 # current module (__name__) as argument.
@@ -29,12 +30,15 @@ def upload():
     filename = video.filename
     save_path = os.path.join(UPLOAD_FOLDER, filename)
     video.save(save_path)
-
-    return jsonify({"url": f"http://localhost:5000/output/{filename}"})
+    print("Video saved at", save_path)
+    output_path = test.process_video(filename, "best_new.pt")
+    return jsonify({"url": f"http://localhost:5000/output/{output_path}"})
 
 
 @app.route('/output/<filename>')
 def serve_output(filename):
+    print(filename)
+    print(os.path.join('outputs', filename))
     return send_file(os.path.join(OUTPUT_FOLDER, filename), mimetype="video/mp4")
 
 

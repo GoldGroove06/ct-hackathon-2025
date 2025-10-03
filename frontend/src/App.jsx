@@ -47,8 +47,8 @@ function App() {
       {toasts.map((toast) => toast)}
       <div className="bg-gray-200 rounded-xl w-[400px] h-[200px] flex items-center justify-center mb-8 flex-col flex">
         {loading ? "loading" : (<>
-          
-          <input type="file" accept="video/*" onChange={(e) => setFile(e.target.files?.[0] || null)} ><UploadLogo /></input>
+          <UploadLogo />
+          <input type="file" accept="video/*" onChange={(e) => setFile(e.target.files?.[0] || null)} />
           <button onClick={handleUpload} className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded">Upload</button>
 
         </>)}
@@ -56,7 +56,7 @@ function App() {
       {output && (
         <div className="my-8 p-4 bg-gray-200 rounded-3xl">
 
-          <video width="420" height="240" controls className="rounded-2xl">
+          <video width="420" height="240" controls preload="metadata" className="rounded-2xl">
             <source src={output} type="video/mp4" />
           </video>
 
