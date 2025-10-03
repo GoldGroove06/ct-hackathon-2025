@@ -9,3 +9,5 @@ pyvenv.cfg
 Scripts
 Lib
 Include
+uploads
+outputs
