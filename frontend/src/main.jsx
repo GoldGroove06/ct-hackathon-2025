@@ -10,7 +10,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar/>
     <div className='flex flex-row  w-full'>
-      <Sidebar/>
       <div className='w-full'>
 <App />
       </div>

@@ -49,19 +49,20 @@ function App() {
         {loading ? "loading" : (<>
           <UploadLogo />
           <input type="file" accept="video/*" onChange={(e) => setFile(e.target.files?.[0] || null)} />
-          <button onClick={handleUpload} className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded">Upload</button>
+          <button onClick={handleUpload} className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded mt-4">Start Processing</button>
 
         </>)}
       </div>
+      {file && (
+       
+          <div>
+            <video width="420" height="240" controls preload="metadata">
+              <source src={URL.createObjectURL(file)} type="video/mp4" />
+            </video>
+          </div>
+      )}
       {output && (
-        <div className="my-8 p-4 bg-gray-200 rounded-3xl">
-
-          <video width="420" height="240" controls preload="metadata" className="rounded-2xl">
-            <source src={output} type="video/mp4" />
-          </video>
-
-
-        </div>
+        <a href={output} download="output.mp4" className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded mt-8">Download</a>
       )}
     </div>
   )

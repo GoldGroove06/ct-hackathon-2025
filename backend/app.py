@@ -38,8 +38,7 @@ def upload():
 @app.route('/output/<filename>')
 def serve_output(filename):
     print(filename)
-    print(os.path.join('outputs', filename))
-    return send_file(os.path.join(OUTPUT_FOLDER, filename), mimetype="video/mp4")
+    return send_file(os.path.join('outputs', filename), as_attachment=True)
 
 
 # main driver function
