@@ -61,8 +61,11 @@ function App() {
             </video>
           </div>
       )}
-      {output && (
+      {output && (<div>
+
+        <div>Video successfully processed</div>
         <a href={output} download="output.mp4" className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded mt-8">Download</a>
+      </div>
       )}
     </div>
   )
